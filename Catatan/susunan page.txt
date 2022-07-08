@@ -1,0 +1,19 @@
+Di dalam Folder SRC
+1. API
+2. Assets
+- 
+3. Components
+- Card.js
+-CardDetail
+- Card Edit
+-Navbar
+-Table
+4.Elements
+-Alert
+- Button
+- Input File
+- Input Text
+5. Page
+- Home
+-
+-

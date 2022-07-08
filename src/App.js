@@ -1,8 +1,13 @@
 import './App.css';
+import React from 'react';
+import Landing from './Page/Landing';
 
 function App() {
   return (
-    <h1 className='text-3xl font-bold underline'>Hasdlksjdlii</h1>
+    <div>
+      <Landing></Landing>
+    </div>
+
   );
 }
 
