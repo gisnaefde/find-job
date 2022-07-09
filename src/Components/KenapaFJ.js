@@ -1,5 +1,5 @@
 import React from "react";
-import Bg from "../Assets/Images/Box Background.png"
+import Bg from "../Assets/Images/Dot Ornament.png"
 
 const KenapaFJ = () => {
     return(
@@ -8,6 +8,9 @@ const KenapaFJ = () => {
                 <h1 className="text-3xl font-bold">Kenapa Find Job ?</h1>
                 <p className="mt-5 text-abu">Kami Telah berpengalaman dalam melayani raturan ribu orang mendapatkan pekerjaan mereka</p>
                 <h1 className="mt-9 text-5xl font-extrabold text-green">600++</h1>
+                <div className="absolute left-32">
+                    <img src={Bg} className="relative -z-10"></img>
+                </div>
                 <p className="mt-3 text-abu">Lowongan pekerjaan</p>
             </div>
             <div className="basis-1/2 h-full bg-biru py-32">
