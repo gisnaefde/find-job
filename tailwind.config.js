@@ -10,7 +10,8 @@ module.exports = {
         'greenless' : '#B7E2DF',
         'abu':'#7D8186',
         'orange': '#FE753E',
-        'biru': '#F6FAFA'
+        'orangeless' : '#FEEFEA',
+        'biru': '#F6FAFA',
       },
       fontFamily : {
         'oswald':['Oswald', "sans-serif"],
@@ -22,7 +23,10 @@ module.exports = {
         c : "491px",
         d : "123px",
         e : "190px",
-        f : "67px"
+        f : "67px",
+        g : "290px",
+        h : "303px",
+        i : "210px",
       }
     },
   },

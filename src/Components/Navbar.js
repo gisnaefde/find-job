@@ -10,23 +10,18 @@ const Navbar = () => {
                 <div className="font-Mulish">
                     <ul className="flex">
                         <li className="mx-7">
-                            Temukan Lokasi
+                            Kenapa Find Job
                         </li>
                         <li className="mx-7">
-                            Jenis Ruang
-                        </li>
-                        <li className="mx-7">
-                            Komunitas
-                        </li>
-                        <li className="mx-7">
-                            Blog
+                            Ulasan
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="font-Mulish">
-                <button className="">Login</button>
-            </div>
+                <div className="font-Mulish">
+                    <a className="mx-20">Job Vacancy</a>
+                    <button className="">Login</button>
+                </div>
 
         </nav>
     )
