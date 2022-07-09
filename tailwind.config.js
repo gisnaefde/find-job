@@ -7,8 +7,10 @@ module.exports = {
     extend: {
       colors:{
         'green':'#1EA59A',
+        'greenless' : '#B7E2DF',
         'abu':'#7D8186',
-        'orange': '#FE753E'
+        'orange': '#FE753E',
+        'biru': '#F6FAFA'
       },
       fontFamily : {
         'oswald':['Oswald', "sans-serif"],
