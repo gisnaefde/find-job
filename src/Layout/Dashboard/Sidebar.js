@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {BiMenu} from "react-icons/bi";
 
 const Sidebar = () => {
 
@@ -11,14 +12,14 @@ const Sidebar = () => {
 
     return (
         <div className="flex font-Mulish">
-            <div className={`${open ? "w-72" : "w-20"} bg-abu h-screen relative duration-300`}>
-                <div className="flex py-5 pl-5 bg-orange">
+            <div className={`${open ? "w-72" : "w-0"} bg-abu h-screen relative duration-300`}>
+                <div className="flex py-5  bg-orange">
                     <p className={`${!open && "hidden duration-300"} text-2xl text-white ml-5`}>Find Job</p>
-                    <button className={`p-2 text-white absolute rounded-full -right-3 text-xl font-bold bg-abu ${!open && "rotate-180 duration-300"}`} onClick={() => { setOpen(!open) }}>></button>
+                    <button className={`p-2 text-white absolute -right-12 text-xl font-bold bg-abu`} onClick={() => { setOpen(!open) }}><BiMenu/></button>
                 </div>
-                <ul className="text-white ml-4 mt-9">
+                <ul className="text-white mt-9 ">
                     {menus.map((menu)=>(
-                        <li className={`${!open && "hidden"} my-4`}>{menu.title}</li>
+                        <li className={`${!open && "hidden"} py-3 px-5 my-4 hover:bg-slate-500`}>{menu.title}</li>
                     ))}
                 </ul>
             </div>
