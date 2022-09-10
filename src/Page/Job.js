@@ -39,6 +39,7 @@ const Job = () => {
             {
                 job?.map((data, index) => {
 
+                    //membuat titik dalam rupiah
                     const salaryMin = data.salary_min.toString().split('').reverse().join('');
                     const ribuanMin 	= salaryMin.match(/\d{1,3}/g);
                     const hasilMin	= ribuanMin.join('.').split('').reverse().join('');
@@ -59,11 +60,11 @@ const Job = () => {
                                         <tbody>
                                             <tr>
                                                 <td className="font-bold">Company</td>
-                                                <td className="pl-3">{data.company_name}</td>
+                                                <td className="pl-3 text-ellipsis overflow-hidden ...">{data.company_name}</td>
                                             </tr>
                                             <tr>
                                                 <td className="font-bold">Qualification</td>
-                                                <td className="pl-3">{data.job_qualification}</td>
+                                                <td className="pl-3 text-clip overflow-hidden ...">{data.job_qualification}</td>
                                             </tr>
                                             <tr>
                                                 <td className="font-bold">Salary</td>

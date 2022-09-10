@@ -9,7 +9,7 @@ const ButtonLogout = () => {
     }
 
     return(
-        <Link to="/login">
+        <Link to="/">
                 <button onClick={handleLogout} className="w-28 text-white rounded-2xl p-2 bg-orange hover:bg-opacity-80 hover:text-slate-700 text-center">Logout</button>
         </Link>
     )

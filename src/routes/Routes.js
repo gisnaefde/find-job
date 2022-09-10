@@ -8,6 +8,7 @@ import Landing from "../Page/Landing";
 import BadRequest400 from "../Page/error/BadRequest400";
 import SidebarLayout from "../Layout/Dashboard/SidebarLayout";
 import DetailJob from "../Page/DetailJob";
+import FormJob from "../Layout/Dashboard/FormJob";
 
 const Routers = () => {
     return(
@@ -16,11 +17,12 @@ const Routers = () => {
                 <Route path="/" element={<Landing/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
-                <Route path="/changePassword/:id" element={<ChangePassword/>}/>
+                <Route path="/changePassword" element={<ChangePassword/>}/>
                 <Route path="/job" element={<Job/>}/>
                 <Route path="/badRequest400" element={<BadRequest400/>}/>
                 <Route path="/sidebarLayout" element={<SidebarLayout/>}/>
                 <Route path="/detail-job/:id" element={<DetailJob/>}/>
+                <Route path="/form-job" element={<FormJob/>}/>
             </Routes>
         </BrowserRouter>
     )
