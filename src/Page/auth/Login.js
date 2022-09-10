@@ -29,7 +29,7 @@ const Login = () => {
             const token = (e.data.token)
             // console.log(token)
             Cookies.set('token', token);
-            history("/sidebarLayout")
+            history("/list-Job-Table")
 
         }).catch((err)=>{
             const error = err.request.status

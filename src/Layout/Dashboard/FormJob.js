@@ -1,13 +1,14 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
-import { useParams,Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Footer from '../../Components/Footer';
 import Sidebar from './Sidebar';
 
 const FormJob = () => {
 
     const { id } = useParams()
+    const navigate = useNavigate()
     const [token, setToken] = useState()
     const [input, setInput] = useState({
         title: "",
@@ -92,6 +93,7 @@ const FormJob = () => {
                 }
             }).then((res) => {
                 console.log(res)
+                navigate("/list-Job-Table")
             }).catch((err) => {
                 console.log(err)
             })
@@ -115,6 +117,7 @@ const FormJob = () => {
             })
                 .then((res) => {
                     console.log(res)
+                    navigate("/list-Job-Table")
                 }).catch((err) => {
                     console.log(err)
                 })
@@ -188,9 +191,7 @@ const FormJob = () => {
                             <input onChange={handleChange} type="text" name="salary_max" value={input.salary_max} className='col-span-3 text-abu px-3 py-2 border-2 border-gray-300 rounded-xl focus:outline-none  focus:border-2 focus:border-orange'></input><br />
                         </div>
                         <div className='flex justify-center'>
-                            <Link to="/list-Job-Table">
-                                <button className="w-28 text-white rounded-2xl p-2 bg-orange hover:bg-opacity-80 hover:text-slate-700 text-center">Submit</button>
-                            </Link>
+                            <button className="w-28 text-white rounded-2xl p-2 bg-orange hover:bg-opacity-80 hover:text-slate-700 text-center">Submit</button>
                         </div>
                     </form>
                 </div>

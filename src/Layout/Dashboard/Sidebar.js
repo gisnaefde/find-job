@@ -8,10 +8,9 @@ const Sidebar = (props) => {
 
     const [open, setOpen] = useState(true)
     const menus = [
-        { title: "Dashboard", to:"/login"},
         { title: "List Job", to:"/list-Job-Table" },
         { title: "Add Job" , to:"/form-job"},
-        { title: "Setting", to:"/changePassword"}
+        { title: "Change Password", to:"/changePassword"}
     ]
 
     return (
