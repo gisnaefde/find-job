@@ -4,9 +4,9 @@ import Img1 from "../Assets/Images/people1.png"
 import Img2 from "../Assets/Images/people2.png"
 import Img3 from "../Assets/Images/people3.png"
 
-const Ulasan = () => {
+const Ulasan = (props) => {
     return(
-        <div className="flex flex-row mt-10 font-Mulish">
+        <div className="flex flex-row mt-10 font-Mulish" id="ulasan">
             <div className="basis-1/2 h-full bg-orangeless py-40">
                 <h1 className="font-bold text-3xl pr-40 px-5">Apa Kata Mereka Tentang Find Job</h1>
                 <div className="absolute left-40">

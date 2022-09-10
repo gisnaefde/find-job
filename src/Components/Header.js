@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom'
+
 import Img from "../Assets/Images/Bitmap.png"
 import ComponentImg from "../Assets/Images/Dot Ornament.png";
 import CardHeader from "../Elements/CardHeader";
@@ -16,7 +18,9 @@ const Header = () => {
                         <h1>Impianmu Disini</h1>
                     </div>
                     <div className="mt-7">
-                        <CardHeader/>
+                        <Link to="/job">
+                            <CardHeader/>
+                        </Link>
                     </div>
                 </div>
                 <img src={ComponentImg} className="relative z-10 -mt-6 -ml-6"/>

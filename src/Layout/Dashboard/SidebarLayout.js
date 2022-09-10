@@ -4,8 +4,9 @@ import Sidebar from "./Sidebar";
 const SidebarLayout = (props) => {
     return(
         <>
-            <Sidebar/>
-            {props.children}
+            <Sidebar>
+                <h1>hahahahah</h1>
+            </Sidebar>
         </>
     )
 }

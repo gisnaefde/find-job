@@ -3,7 +3,7 @@ import Bg from "../Assets/Images/Dot Ornament.png"
 
 const KenapaFJ = () => {
     return(
-        <div className="flex flex-row mt-10 font-Mulish">
+        <div className="flex flex-row mt-10 font-Mulish " id="kenapaFJ">
             <div className="basis-1/2 pr-28 py-32">
                 <h1 className="text-3xl font-bold">Kenapa Find Job ?</h1>
                 <p className="mt-5 text-abu">Kami Telah berpengalaman dalam melayani raturan ribu orang mendapatkan pekerjaan mereka</p>

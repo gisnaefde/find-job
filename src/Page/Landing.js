@@ -1,7 +1,7 @@
 import React from "react";
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import KenapaFJ from "../Components/KenapaFJ";
-import JobVacancy from "../Components/JobVacancy";
 import Navbar from "../Components/Navbar";
 import Ulasan from "../Components/Ulasan";
 
@@ -12,6 +12,7 @@ const Landing = () => {
             <Header/>
             <KenapaFJ/>
             <Ulasan/>
+            <Footer/>
         </div>
     )
 }
