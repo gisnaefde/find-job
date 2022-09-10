@@ -1,17 +1,14 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
+import { useParams,Link } from 'react-router-dom';
 import Footer from '../../Components/Footer';
 import Sidebar from './Sidebar';
 
 const FormJob = () => {
 
+    const { id } = useParams()
     const [token, setToken] = useState()
-
-    useEffect(() => {
-        setToken(Cookies.get('token'))
-    })
-
     const [input, setInput] = useState({
         title: "",
         job_description: "",
@@ -25,6 +22,34 @@ const FormJob = () => {
         salary_min: "",
         salary_max: "",
     })
+
+    useEffect(() => {
+        setToken(Cookies.get('token'))
+    })
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`https://dev-example.sanbercloud.com/api/job-vacancy/${id}`)
+                .then((res) => {
+                    const data = res.data
+                    setInput({
+                        title: data.title,
+                        job_description: data.job_description,
+                        job_qualification: data.job_qualification,
+                        job_type: data.job_type,
+                        job_tenure: data.job_tenure,
+                        job_status: data.job_status,
+                        company_name: data.company_name,
+                        company_image_url: data.company_image_url,
+                        company_city: data.company_city,
+                        salary_min: data.salary_min,
+                        salary_max: data.salary_max,
+                    })
+                }).catch((err) => {
+                    console.log(err)
+                })
+        }
+    }, [])
 
     const handleChange = (event) => {
         const value = event.target.value
@@ -47,30 +72,55 @@ const FormJob = () => {
             company_city,
             salary_min,
             salary_max } = input
-        await axios.post(`https://dev-example.sanbercloud.com/api/job-vacancy`, {
-            title: title,
-            job_description: job_description,
-            job_qualification: job_qualification,
-            job_type: job_type,
-            job_tenure: job_tenure,
-            job_status: job_status,
-            company_name: company_name,
-            company_image_url: company_image_url,
-            company_city: company_city,
-            salary_min: salary_min,
-            salary_min: salary_max
-        }, {
-            headers: {
-                "Authorization": 'Bearer' + token
-            }
-        })
-            .then((res) => {
+
+        if (id) {
+            await axios.put(`https://dev-example.sanbercloud.com/api/job-vacancy/${id}`, {
+                title: title,
+                job_description: job_description,
+                job_qualification: job_qualification,
+                job_type: job_type,
+                job_tenure: job_tenure,
+                job_status: job_status,
+                company_name: company_name,
+                company_image_url: company_image_url,
+                company_city: company_city,
+                salary_min: salary_min,
+                salary_max: salary_max
+            }, {
+                headers: {
+                    "Authorization": 'Bearer' + token
+                }
+            }).then((res) => {
                 console.log(res)
             }).catch((err) => {
                 console.log(err)
             })
+        } else {
+            await axios.post(`https://dev-example.sanbercloud.com/api/job-vacancy`, {
+                title: title,
+                job_description: job_description,
+                job_qualification: job_qualification,
+                job_type: job_type,
+                job_tenure: job_tenure,
+                job_status: job_status,
+                company_name: company_name,
+                company_image_url: company_image_url,
+                company_city: company_city,
+                salary_min: salary_min,
+                salary_max: salary_max
+            }, {
+                headers: {
+                    "Authorization": 'Bearer' + token
+                }
+            })
+                .then((res) => {
+                    console.log(res)
+                }).catch((err) => {
+                    console.log(err)
+                })
+        }
 
-            //agar form mrnjadi kosong setelah submit
+        //agar form mrnjadi kosong setelah submit
         setInput({
             title: "",
             job_description: "",
@@ -138,7 +188,9 @@ const FormJob = () => {
                             <input onChange={handleChange} type="text" name="salary_max" value={input.salary_max} className='col-span-3 text-abu px-3 py-2 border-2 border-gray-300 rounded-xl focus:outline-none  focus:border-2 focus:border-orange'></input><br />
                         </div>
                         <div className='flex justify-center'>
-                            <button className="w-28 text-white rounded-2xl p-2 bg-orange hover:bg-opacity-80 hover:text-slate-700 text-center">Submit</button>
+                            <Link to="/list-Job-Table">
+                                <button className="w-28 text-white rounded-2xl p-2 bg-orange hover:bg-opacity-80 hover:text-slate-700 text-center">Submit</button>
+                            </Link>
                         </div>
                     </form>
                 </div>

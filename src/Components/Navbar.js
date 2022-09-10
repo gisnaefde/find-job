@@ -18,9 +18,6 @@ const Navbar = () => {
         element.scrollIntoView();
     }
 
-    const handleLogout = ()=>{
-        Cookies.remove(`token`);
-    }
 
     return (
         <nav className="bg-gray-200 py-2 mt-3 px-5 flex justify-between rounded-t-xl">

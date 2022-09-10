@@ -9,6 +9,7 @@ import BadRequest400 from "../Page/error/BadRequest400";
 import SidebarLayout from "../Layout/Dashboard/SidebarLayout";
 import DetailJob from "../Page/DetailJob";
 import FormJob from "../Layout/Dashboard/FormJob";
+import ListJobTable from "../Layout/Dashboard/ListJobTable";
 
 const Routers = () => {
     return(
@@ -23,6 +24,8 @@ const Routers = () => {
                 <Route path="/sidebarLayout" element={<SidebarLayout/>}/>
                 <Route path="/detail-job/:id" element={<DetailJob/>}/>
                 <Route path="/form-job" element={<FormJob/>}/>
+                <Route path="/form-job/:id" element={<FormJob/>}/>
+                <Route path="/list-Job-Table" element={<ListJobTable/>}/>
             </Routes>
         </BrowserRouter>
     )
