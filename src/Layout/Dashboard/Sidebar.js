@@ -10,7 +10,8 @@ const Sidebar = (props) => {
     const menus = [
         { title: "List Job", to:"/list-Job-Table" },
         { title: "Add Job" , to:"/form-job"},
-        { title: "Change Password", to:"/changePassword"}
+        { title: "Change Password", to:"/changePassword"},
+        { title: "Profil", to:"/profil"}
     ]
 
     return (

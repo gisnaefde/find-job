@@ -2,6 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "../../Components/Footer";
 import Sidebar from "./Sidebar";
 
 const ListJobTable = () => {
@@ -17,6 +18,7 @@ const ListJobTable = () => {
     useEffect(() => {
         axios.get(`https://dev-example.sanbercloud.com/api/job-vacancy`)
             .then((res) => {
+                console.log(res.data)
                 setJob(res.data.data)
                 console.log(job)
             }).catch((err) => {
@@ -51,7 +53,7 @@ const ListJobTable = () => {
     return (
         <>
             <Sidebar>
-                <div className='mt-10'>
+                <div className='mt-10 mb-10'>
                     <h1 className='text-center text-3xl font-bold'>List Job</h1>
                     <p className='mt-4 underline text-center'></p>
                     <div className="ml-10 mr-20">
@@ -98,6 +100,7 @@ const ListJobTable = () => {
                         </table>
                     </div>
                 </div>
+                <Footer/>
             </Sidebar>
         </>
     )

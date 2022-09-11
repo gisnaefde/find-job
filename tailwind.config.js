@@ -27,6 +27,12 @@ module.exports = {
         g : "290px",
         h : "303px",
         i : "210px",
+      },
+      screens :{
+        smartPhone : {'max' : '480px'},
+        tablet : {'max' : '768px'},
+        laptop : {'max' : '1279px'},
+        desktop : {'min' : '1280'}
       }
     },
   },

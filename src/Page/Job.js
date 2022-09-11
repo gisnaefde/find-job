@@ -14,6 +14,7 @@ const Job = () => {
     useEffect(() => {
         axios.get(`https://dev-example.sanbercloud.com/api/job-vacancy`)
             .then((res) => {
+                console.log(res.data)
                 setJob(res.data.data);
                 console.log(job);
             })

@@ -10,6 +10,7 @@ import SidebarLayout from "../Layout/Dashboard/SidebarLayout";
 import DetailJob from "../Page/DetailJob";
 import FormJob from "../Layout/Dashboard/FormJob";
 import ListJobTable from "../Layout/Dashboard/ListJobTable";
+import Profil from "../Page/Profil";
 
 const Routers = () => {
     return(
@@ -26,6 +27,7 @@ const Routers = () => {
                 <Route path="/form-job" element={<FormJob/>}/>
                 <Route path="/form-job/:id" element={<FormJob/>}/>
                 <Route path="/list-Job-Table" element={<ListJobTable/>}/>
+                <Route path="profil" element={<Profil/>}/>
             </Routes>
         </BrowserRouter>
     )
